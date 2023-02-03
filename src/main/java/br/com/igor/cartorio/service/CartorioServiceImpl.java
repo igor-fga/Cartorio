@@ -26,8 +26,17 @@ public class CartorioServiceImpl implements CartorioService {
 	}
 
 	@Override
-	public Optional<Cartorio> getCartorioById(Long id) {
-		return cartorioRepository.findById(id);
+	public Cartorio getCartorioById(Long id) {
+		Optional<Cartorio> cartorioOptional = cartorioRepository.findById(id);
+		Cartorio cartorio = null;
+
+		if (cartorioOptional.isPresent()) {
+			cartorio = cartorioOptional.get();
+		} else {
+			throw new RuntimeException("Cartorio Id not found: " + id);
+		}
+
+		return cartorio;
 	}
 
 	@Override

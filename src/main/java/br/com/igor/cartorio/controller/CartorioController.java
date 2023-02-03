@@ -1,9 +1,5 @@
 package br.com.igor.cartorio.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -53,16 +49,27 @@ public class CartorioController {
 
 	@GetMapping("/edit/{id}")
 	public String edit(@PathVariable("id") Long id, Model model) {
-		Optional<Cartorio> cartorio = cartorioService.getCartorioById(id);
+		Cartorio cartorio = cartorioService.getCartorioById(id);
 		
 		model.addAttribute("cartorio", cartorio);
 
 		return "update-cartorio";
 	}
+	
+	@GetMapping("/certidoes/{id}")
+	public String getCertidoes(@PathVariable("id") Long id, Model model) {
+		
+		Cartorio cartorio = cartorioService.getCartorioById(id);
+		
+		model.addAttribute("cartorio", cartorio);
+
+		return "list-certidoes";
+
+	}
 
 	@GetMapping("/delete/{id}")
 	public String deleteCartorioById(@PathVariable("id") Long id, Model model) {
-		Optional<Cartorio> cartorio = cartorioService.getCartorioById(id);
+		Cartorio cartorio = cartorioService.getCartorioById(id);
 		cartorioService.deleteCartorioById(id);
 		model.addAttribute("cartorio", cartorio);
 

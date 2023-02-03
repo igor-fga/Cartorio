@@ -23,8 +23,8 @@ public class Cartorio {
 	private Long id;
 	
 	@Column(name = "nome", nullable = false)
-	private String nome;
+	public String nome;
 	
 	@Column(name = "endereco", nullable = false)
-	private String endereco;
+	public String endereco;
 }
