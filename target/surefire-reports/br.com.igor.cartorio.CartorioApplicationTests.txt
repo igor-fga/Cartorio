@@ -1,4 +1,9 @@
 -------------------------------------------------------------------------------
 Test set: br.com.igor.cartorio.CartorioApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.718 s - in br.com.igor.cartorio.CartorioApplicationTests
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 5.338 s <<< FAILURE! - in br.com.igor.cartorio.CartorioApplicationTests
+contextLoads  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@1f2497d9 testClass = br.com.igor.cartorio.CartorioApplicationTests, locations = [], classes = [br.com.igor.cartorio.CartorioApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceLocations = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@72e5a8e, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@7db12bb6, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3012646b, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@9da1, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@2a7f1f10, org.springframework.boot.test.context.SpringBootTestAnnotation@bef2dd95], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Set.add(Object)" because the return value of "br.com.igor.cartorio.model.Cartorio.getCertidoes()" is null
+
